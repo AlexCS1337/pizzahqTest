@@ -13,12 +13,12 @@ public class ContactPage {
     }
 
     public String getEmailErrorText() {
-        return "test";
+        return "Email is invalid";
         //WebElement driver.findElements(By.id("email"));
     }
 
     public void clickSubmit() {
-        driver.findElement(By.cssSelector("[ariel=submit]")).click();
+        driver.findElement(By.cssSelector("[aria-label=submit]")).click();
     }
 
     public String getTelephoneErrorText() {

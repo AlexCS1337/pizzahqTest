@@ -33,8 +33,8 @@ public class PizzaHQTestSuite {
         contactPage.clickSubmit();
 
         // Assert
-        Assertions.assertEquals("Email is invalid", contactPage.getEmailErrorText(),"Validate the email error is correct");
-        Assertions.assertEquals("Telephone is invalid", contactPage.getTelephoneErrorText());
+        Assertions.assertEquals("Email is invalid", contactPage.getEmailErrorText(),"Validating to see if email error is correct");
+        Assertions.assertEquals("Telephone is invalid", contactPage.getTelephoneErrorText(), "Validating to see if telephone error is correct");
     }
 
     @AfterEach
