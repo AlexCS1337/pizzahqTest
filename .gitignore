@@ -27,6 +27,7 @@ hs_err_pid*
 *.ipr
 *.iws
 target/*
+.idea/*
 
 # backup files
 *.bak
