@@ -1,6 +1,7 @@
 package com.accesshq.web.tests;
 
 import com.accesshq.web.models.ContactPage;
+import com.accesshq.web.models.MenuPage;
 import com.accesshq.web.models.Pizza;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -51,6 +52,8 @@ public class PizzaHQTestSuite {
         driver.findElement(By.cssSelector("[aria-label=menu")).click();
 
         // Action
+        var menuPage = new MenuPage(driver);
+        //menuPage.getVeganPizza(m -> m.getPrice() == 14.49);
 
         // Assert
         Assertions.assertEquals("$14.99", Pizza.getPrice());
