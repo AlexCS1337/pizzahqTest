@@ -18,7 +18,7 @@ public class PizzaHQTestSuite {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get(("https://d2dx8jn5qmn998.cloudfront.net/"));
+        driver.get(("https://d2tjwct0w5ff76.cloudfront.net/"));
     }
 
     @Test
@@ -35,6 +35,13 @@ public class PizzaHQTestSuite {
         // Assert
         Assertions.assertEquals("Email is invalid", contactPage.getEmailErrorText(),"Validating to see if email error is correct");
         Assertions.assertEquals("Telephone is invalid", contactPage.getTelephoneErrorText(), "Validating to see if telephone error is correct");
+
+        // Act
+        contactPage.clickClear();
+
+        //Assert
+        Assertions.assertEquals("", contactPage.getEmailErrorText(), "Validating to see if error message is gone");
+        Assertions.assertEquals("", contactPage.getTelephoneErrorText(), "Validating to see if error message is gone");
     }
 
     @AfterEach

@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class ContactPage {
 
     private final WebDriver driver;
@@ -13,8 +15,8 @@ public class ContactPage {
     }
 
     public String getEmailErrorText() {
-        return "Email is invalid";
-        //WebElement driver.findElements(By.id("email"));
+        List<WebElement> elemList = driver.findElements(By.id("email-err"));
+        return elemList.size() > 0 ? elemList.get(0).getText() : "";
     }
 
     public void clickSubmit() {
@@ -22,7 +24,11 @@ public class ContactPage {
     }
 
     public String getTelephoneErrorText() {
-        //WebElement driver.findElements(By.id("telephone"));
-        return "Test";
+        List<WebElement> elemList = driver.findElements(By.id("telephone-err"));
+        return elemList.size() > 0 ? elemList.get(0).getText() : "";
+    }
+
+    public void clickClear() {
+        driver.findElement(By.cssSelector("[aria-label=clear")).click();
     }
 }
