@@ -1,6 +1,7 @@
 package com.accesshq.web.tests;
 
 import com.accesshq.web.models.ContactPage;
+import com.accesshq.web.models.Pizza;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,6 +43,17 @@ public class PizzaHQTestSuite {
         //Assert
         Assertions.assertEquals("", contactPage.getEmailErrorText(), "Validating to see if error message is gone");
         Assertions.assertEquals("", contactPage.getTelephoneErrorText(), "Validating to see if error message is gone");
+    }
+
+    @Test
+    public void Verify_Pizza_Price () {
+        // Arrange
+        driver.findElement(By.cssSelector("[aria-label=menu")).click();
+
+        // Action
+
+        // Assert
+        Assertions.assertEquals("$14.99", Pizza.getPrice());
     }
 
     @AfterEach
